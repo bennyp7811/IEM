@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - Meteor
+  - Door
+  - usb
   layers:
   - Default
   - TransparentFX
