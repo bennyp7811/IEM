@@ -12933,7 +12933,7 @@ GameObject:
   - component: {fileID: 1545252568}
   - component: {fileID: 1545252569}
   m_Layer: 0
-  m_Name: OutsideSpace
+  m_Name: OutsideShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12975,7 +12975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forwardSpeed: 2
   sideSpeed: 1
-  level: {fileID: 1608197622}
+  lever: {fileID: 1608197622}
   knob: {fileID: 171323988}
 --- !u!1 &1548251155
 GameObject:
