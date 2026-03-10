@@ -5,7 +5,16 @@ public class ColePuzzleManager : MonoBehaviour
     public int[] correctOrder = { 1, 3, 2, 4 };
     private int currentIndex = 0;
 
-    public GameObject door;
+    
+    public moveDoors moveDoors;
+    public moveDoors moveDoors2;
+
+    public void start()
+    {
+       // moveDoors = GameObject.doorRight.GetComponent<moveDoors>();
+    }
+        
+
 
     public void PressButton(int buttonNumber)
     {
@@ -15,7 +24,10 @@ public class ColePuzzleManager : MonoBehaviour
 
             if (currentIndex == correctOrder.Length)
             {
-                door.SetActive(false);
+                moveDoors.moveRight();
+                moveDoors2.moveLeft();
+
+
             }
         }
         else
