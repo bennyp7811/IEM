@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ColePuzzleManager : MonoBehaviour
 {
-    public int[] correctOrder = { 1, 3, 2, 4 };
+    public int[] correctOrder = { 2, 1, 3, 4 };
     private int currentIndex = 0;
 
     
