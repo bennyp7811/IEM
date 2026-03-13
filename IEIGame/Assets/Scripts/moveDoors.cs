@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class moveDoors : MonoBehaviour
 {
 
@@ -25,12 +25,22 @@ public class moveDoors : MonoBehaviour
     public void moveRight()
     {
         targetPOS += Vector3.back * moveDistace;
+        StartCoroutine(waitToClose());
     }
     public void moveLeft()
     {
         targetPOS += Vector3.forward  * moveDistace;
+        StartCoroutine(waitToClose());
     }
 
+
+    IEnumerator waitToClose()
+    {
+        yield return new WaitForSeconds(3);
+        Debug.Log("done");
+        goBack();
+
+    }
 
     public void goBack()
     {
