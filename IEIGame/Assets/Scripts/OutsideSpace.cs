@@ -6,8 +6,8 @@ public class OutsideSpace : MonoBehaviour
     [SerializeField] private float forwardSpeed;
     [SerializeField] private float sideSpeed;
 
-    [SerializeField] private XRLever lever;
-    [SerializeField] private XRKnob knob;
+    public XRLever lever;
+    public XRKnob knob;
 
     void Start()
     {
