@@ -6,12 +6,18 @@ public class moveDoors : MonoBehaviour
     public float moveDistace = 5;
     public float speed = 5;
 
+    public bool keyInsert;
+    
+
     Vector3 startPOS;
     Vector3 targetPOS;
+
     void Start()
     {
         startPOS = transform.position;
         targetPOS = transform.position;
+        keyInsert = false;
+        
        
         
     }
@@ -20,15 +26,19 @@ public class moveDoors : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPOS, speed * Time.deltaTime);
+        
     }
 
     public void moveRight()
     {
+        keyInsert = true;
         targetPOS += Vector3.back * moveDistace;
         StartCoroutine(waitToClose());
+        
     }
     public void moveLeft()
     {
+        keyInsert = true;
         targetPOS += Vector3.forward  * moveDistace;
         StartCoroutine(waitToClose());
     }
@@ -44,6 +54,7 @@ public class moveDoors : MonoBehaviour
 
     public void goBack()
     {
+        keyInsert = false;
 
         targetPOS = startPOS;
 
