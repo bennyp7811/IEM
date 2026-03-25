@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    public static event Action OnPlayerDeath;
 
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
@@ -21,12 +24,12 @@ public class Player : MonoBehaviour
         
     }
 
-    //void Update()
-    //{
+    void Update()
+    {
 
 
 
-    //}
+    }
 
     private IEnumerator DrainHealth()
     {
@@ -42,8 +45,29 @@ public class Player : MonoBehaviour
 
         }
 
+        if (currentHealth <= 0)
+        {
+
+            Death();
+
+        }
 
     }
 
+    public void Heal(int amount)
+    {
+
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+
+        healthBar.SetHealth(currentHealth);
+
+    }
+
+    private void Death()
+    {
+
+        OnPlayerDeath?.Invoke();
+
+    }
 
 }

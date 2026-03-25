@@ -5,6 +5,7 @@ public class taskscomplete : MonoBehaviour
 
     public TMP_Text tasksText;
     public static int tasks;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,18 +13,18 @@ public class taskscomplete : MonoBehaviour
         tasksText.text = (tasks + "/3 tasks complete");
         
     }
-  
 
-
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
     {
-        if (tasks >= 1 )
+
+        if (tasks >= 1)
         {
+
             tasksText.text = (tasks + "/3 tasks complete");
 
         }
-      
-        
+
     }
+
 }
