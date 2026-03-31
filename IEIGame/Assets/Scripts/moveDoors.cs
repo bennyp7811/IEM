@@ -3,6 +3,8 @@ using System.Collections;
 public class moveDoors : MonoBehaviour
 {
 
+    public AudioClip doorMovement;
+
     public float moveDistace = 5;
     public float speed = 5;
 
@@ -34,12 +36,14 @@ public class moveDoors : MonoBehaviour
         keyInsert = true;
         targetPOS += Vector3.back * moveDistace;
         StartCoroutine(waitToClose());
+        AudioSource.PlayClipAtPoint(doorMovement,startPOS, 0.8f);
         
     }
     public void moveLeft()
     {
         keyInsert = true;
         targetPOS += Vector3.forward  * moveDistace;
+        AudioSource.PlayClipAtPoint(doorMovement, startPOS, 0.8f);
         StartCoroutine(waitToClose());
     }
 
@@ -47,7 +51,6 @@ public class moveDoors : MonoBehaviour
     IEnumerator waitToClose()
     {
         yield return new WaitForSeconds(3);
-        Debug.Log("done");
         goBack();
 
     }
@@ -55,7 +58,7 @@ public class moveDoors : MonoBehaviour
     public void goBack()
     {
         keyInsert = false;
-
+        AudioSource.PlayClipAtPoint(doorMovement, startPOS, 0.8f);
         targetPOS = startPOS;
 
     }
