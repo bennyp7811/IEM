@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
 
         StartCoroutine(DrainHealth());
-        
+
     }
 
     void Update()
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
         while (currentHealth > 0)
         {
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(5);
 
             currentHealth -= damage;
 

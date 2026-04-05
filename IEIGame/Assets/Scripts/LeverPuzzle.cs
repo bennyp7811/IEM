@@ -10,7 +10,7 @@ public class LeverPuzzle : MonoBehaviour
     public GameObject lever4;
     public GameObject lever5;
     public GameObject lever6;
-
+    public GameObject tasks;
 
 
     public bool win;
@@ -18,7 +18,8 @@ public class LeverPuzzle : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        tasks.GetComponent<taskscomplete>();
+        
         
     }
 
@@ -53,8 +54,14 @@ public class LeverPuzzle : MonoBehaviour
 
         if (lever1.GetComponent<XRLever>().value == true && lever2.GetComponent<XRLever>().value == true && lever3.GetComponent<XRLever>().value == true && lever4.GetComponent<XRLever>().value == true && lever5.GetComponent<XRLever>().value == true && lever6.GetComponent<XRLever>().value == true)
         {
+            if (win == false)
+            {
+                taskscomplete.tasks++;
+            }
             win = true;
-        } 
+           
+        }
+       
 
 
     }

@@ -14,14 +14,17 @@ public class doormesage : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (moveDoors.keyInsert == true)
+        if (other.CompareTag("Player"))
         {
-            canopen.SetActive(false);
+            if (moveDoors.keyInsert == true)
+            {
+                canopen.SetActive(false);
 
-        }
-        else
-        {
-            canopen.SetActive(true);
+            }
+            else
+            {
+                canopen.SetActive(true);
+            }
         }
     }
 
