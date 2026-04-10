@@ -20,6 +20,11 @@ public class taskscomplete : MonoBehaviour
     {
        tasks++;
     }
+
+    public void tasksDone()
+    {
+               tasks++;
+    }
     // Update is called once per frame
     void Update()
     {

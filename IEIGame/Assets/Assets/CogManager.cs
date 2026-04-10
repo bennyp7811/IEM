@@ -4,17 +4,34 @@ public class CogManager : MonoBehaviour
 {
     public CogSystem end;
     public bool finnished = false;
+    GameObject Player;
+
     void Update()
     {
         if (end != null && end.HasPower)
         {
+            
+
             finnished = true;
             
         }
-      /* else 
-        { 
-            finnished = false;
+        if (Player == null)
+        {
+            Player = GameObject.FindGameObjectWithTag("Player");
         }
-      */         
+         if (finnished && Player != null)
+        {
+            Player.GetComponent<Player>().Heal(100);
+            
+        }
+       
+
+
     }
+
+
+
+
+
+
 }
