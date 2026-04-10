@@ -13,7 +13,7 @@ public class taskscomplete : MonoBehaviour
     {
         controls.SetActive(false);
         tasks = 0;
-        tasksText.text = (tasks + "/4 tasks complete");
+        tasksText.text = (tasks + "/3 tasks complete");
         
     }
     void OnTriggerEnter(Collider other)
@@ -36,7 +36,7 @@ public class taskscomplete : MonoBehaviour
             tasksText.text = (tasks + "/4 tasks complete");
 
         }
-        if (tasks >= 4)
+        if (tasks >= 3)
         {
             controls.SetActive(true);
 
