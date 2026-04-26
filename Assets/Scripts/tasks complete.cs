@@ -13,25 +13,30 @@ public class taskscomplete : MonoBehaviour
     {
         controls.SetActive(false);
         tasks = 0;
-        tasksText.text = (tasks + "/4 tasks complete");
-        
+        tasksText.text = (tasks + "/3 tasks complete");
+
     }
     void OnTriggerEnter(Collider other)
     {
-       tasks++;
+        tasks++;
+    }
+
+    public void tasksDone()
+    {
+        tasks++;
     }
     // Update is called once per frame
     void Update()
     {
-        
+
 
         if (tasks >= 1)
         {
 
-            tasksText.text = (tasks + "/4 tasks complete");
+            tasksText.text = (tasks + "/3 tasks complete");
 
         }
-        if (tasks >= 4)
+        if (tasks >= 3)
         {
             controls.SetActive(true);
 
